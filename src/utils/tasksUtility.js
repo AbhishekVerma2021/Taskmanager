@@ -18,7 +18,7 @@ const createTask = async (taskData) => {
     try {
         let token = getCookieValue('token')
         console.log("token value ", token)
-      const response = await axios.post('http://localhost:5000/tasks', taskData, {
+      const response = await axios.post('https://taskmanagementbackend-qwtx.onrender.com/tasks', taskData, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
@@ -37,7 +37,7 @@ const createTask = async (taskData) => {
   const getAllTasks = async (sortBy, filterBy) => {
     try {
         let token = getCookieValue('token')
-      const response = await axios.get('http://localhost:5000/tasks', {
+      const response = await axios.get('https://taskmanagementbackend-qwtx.onrender.com/tasks', {
         params: {
           sortBy, 
           filterBy, 
@@ -59,7 +59,7 @@ const createTask = async (taskData) => {
   const getTaskById = async (id) => {
     try {
         let token = getCookieValue('token')
-      const response = await axios.get(`http://localhost:5000/tasks/${id}`, {
+      const response = await axios.get(`https://taskmanagementbackend-qwtx.onrender.com/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
@@ -77,7 +77,7 @@ const createTask = async (taskData) => {
   const updateTaskById = async (id, taskData) => {
     try {
         let token = getCookieValue('token')
-      const response = await axios.put(`http://localhost:5000/tasks/${id}`, taskData, {
+      const response = await axios.put(`https://taskmanagementbackend-qwtx.onrender.com/tasks/${id}`, taskData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -95,7 +95,7 @@ const createTask = async (taskData) => {
   const deleteTaskById = async (id) => {
     try {
       let token = getCookieValue('token')
-      const response = await axios.delete(`http://localhost:5000/tasks/${id}`, {
+      const response = await axios.delete(`https://taskmanagementbackend-qwtx.onrender.com/tasks/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`, 
         },
