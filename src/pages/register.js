@@ -26,7 +26,7 @@ const Register = () => {
   };
 
   const handleSubmit = async (event) => {
-    let route = process.env.ROUTE || "http://localhost:5000"
+    let route = process.env.ROUTE || "https://taskmanagementbackend-qwtx.onrender.com"
     event.preventDefault();
     try {
       const response = await axios.post(`${route}/auth/register`, formData); // Replace '/register' with your backend registration endpoint
